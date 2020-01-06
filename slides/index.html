@@ -52,8 +52,9 @@
 					<section>
 						<h3>Shadow DOM</h3>
 						<ul>
-							<li>Funktionalität ist gekapselt und vom anderem Code vollständig getrennt</li>
-							<li>Styles haben keine Auswirkung auf Komponenten außerhalb</li>
+							<li>Funktionalität ist gekapselt und von weiterem Code vollständig getrennt</li>
+							<li>Styles innerhalb haben keine Auswirkung auf Komponenten außerhalb</li>
+							<li>Styles außerhalb haben keine Auswirkung auf Komponenten innerhalb</li>
 						</ul>
 					</section>
 				</section>
@@ -86,7 +87,7 @@
 					<section>
 						<h4>Dekoratoren - @Component</h4>
 						<pre>
-<code class="hljs javascript"  data-line-numbers="1-4">@Component({
+<code class="hljs javascript" data-line-numbers="1-4">@Component({
 	tag: 'st-button',
 	styleUrl: 'st-button.less'
 })

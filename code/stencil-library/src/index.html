@@ -9,12 +9,18 @@
   <script nomodule src="/build/stencil-library.js"></script>
 
 </head>
-<body>
+<body style="margin: 0;">
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <st-button label="Standard Button"></st-button>
-  <st-button class="red" label="Roter Button"></st-button>
-  <st-button class="primary" label="Primary Button"></st-button>
-  <st-tile><div>Test</div></st-tile>
+  <st-nav-bar></st-nav-bar>
+  <div style="margin: 20px">
+    <st-button label="Standard Button"></st-button>
+    <st-button class="red" label="Roter Button"></st-button>
+    <st-button class="primary" label="Primary Button"></st-button>
+  </div>
+  <st-tile style="margin: 20px; width: 1000px; height: 500px;">
+      <h1>Tile</h1>
+      <p>Content of the tile</p>
+    </div>
+  </st-tile>
 </body>
 </html>

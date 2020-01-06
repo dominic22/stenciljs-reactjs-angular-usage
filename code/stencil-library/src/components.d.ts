@@ -27,6 +27,9 @@ export namespace Components {
   interface StButton {
     'label': string;
   }
+  interface StNavBar {
+    'label': string;
+  }
   interface StTile {}
 }
 
@@ -45,6 +48,12 @@ declare global {
     new (): HTMLStButtonElement;
   };
 
+  interface HTMLStNavBarElement extends Components.StNavBar, HTMLStencilElement {}
+  var HTMLStNavBarElement: {
+    prototype: HTMLStNavBarElement;
+    new (): HTMLStNavBarElement;
+  };
+
   interface HTMLStTileElement extends Components.StTile, HTMLStencilElement {}
   var HTMLStTileElement: {
     prototype: HTMLStTileElement;
@@ -53,6 +62,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
     'st-button': HTMLStButtonElement;
+    'st-nav-bar': HTMLStNavBarElement;
     'st-tile': HTMLStTileElement;
   }
 }
@@ -75,11 +85,15 @@ declare namespace LocalJSX {
   interface StButton {
     'label'?: string;
   }
+  interface StNavBar {
+    'label'?: string;
+  }
   interface StTile {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
     'st-button': StButton;
+    'st-nav-bar': StNavBar;
     'st-tile': StTile;
   }
 }
@@ -92,6 +106,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'st-button': LocalJSX.StButton & JSXBase.HTMLAttributes<HTMLStButtonElement>;
+      'st-nav-bar': LocalJSX.StNavBar & JSXBase.HTMLAttributes<HTMLStNavBarElement>;
       'st-tile': LocalJSX.StTile & JSXBase.HTMLAttributes<HTMLStTileElement>;
     }
   }
