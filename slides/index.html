@@ -31,23 +31,15 @@
 					<p>Dominic Zettl</p>
 				</section>
 				<section>
-						<h3>Agenda</h3>
-						<ol>
-							<li>Was ist Stencil ?</li>
-							<li>Was sind Web-Komponenten ?</li>
-							<li>Warum Stencil ?</li>
-							<li>Stencil API</li>
-							<li>Live Coding</li>
-						</ol>
-					</section>
-				<section>
-					<h3>Was ist Stencil</h3>
-					<ul>
-						<li>Compiler für Web-Komponenten</li>
-						<li>Basiert auf TypeScript und verwendet JSX</li>
-						<li>Open Source</li>
-						<li>Entwickelt von Ionic</li>
-					</ul>
+					<h3>Agenda</h3>
+					<ol>
+						<li>Was sind Web-Komponenten ?</li>
+						<li>Was ist Stencil ?</li>
+						<li>Warum Stencil ?</li>
+						<li>Stencil API</li>
+						<li>Live Coding</li>
+						<li>Zusammenfassung</li>
+					</ol>
 				</section>
 				<section>
 					<section>
@@ -66,18 +58,125 @@
 					</section>
 				</section>
 				<section>
-					<h3>Warum Stencil ?</h3>
+					<h3>Was ist Stencil ?</h3>
 					<ul>
 						<li>Compiler für Web-Komponenten</li>
+						<li>Basiert auf TypeScript und verwendet JSX</li>
+						<li>Open Source</li>
+						<li>Entwickelt von Ionic</li>
 					</ul>
 				</section>
+				<section>
+					<h3>Warum Stencil ?</h3>
 				
+					<img src="assets/browser-support.JPG"/>
+					<ul>
+						<li>Unterstützt alle gängigen Browser</li>
+						<li>Einfache API zur Erstellung von Web-Komponenten</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>Stencil API</h3>
+						<ul>
+							<li>Lifecycle Hooks: Lebenszyklus Events einer Komponente</li>
+							<li>Dekoratoren: Eigenschaften einer Komponente</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Dekoratoren - @Component</h4>
+						<pre>
+<code class="hljs javascript"  data-line-numbers="1-4">@Component({
+	tag: 'st-button',
+	styleUrl: 'st-button.less'
+})
+export class StButton {
+}</code></pre>
+						<ul><li>Deklariert die Web-Komponente <b>&lt;st-button&gt;</b></li></ul>
+					</section>
+					<section>
+						<h4>Dekoratoren - @Prop</h4>
+						<pre><code class="hljs javascript" data-line-numbers="4-6">import { Prop } from '@stencil/core';
+
+export class StButton {
+	@Prop() color: string;
+	@Prop() icon: string;
+	@Prop() label: string;
+}</code></pre>
+						<ul><li>Deklariert ein Property oder Attribut</li></ul>
+					</section>
+					<section>
+						<h4>Dekoratoren - @State</h4>
+						<pre><code class="hljs javascript" data-line-numbers="2,6,11">export class StToggleButton {
+	@State() open: boolean;
+
+	@Listen('click', { capture: true })
+	handleClick() {
+		this.open = !this.open;
+	}
+
+	render() {
+		return <button>
+			{this.open ? "On" : "Off"}
+		</button>;
+	}
+}</code></pre>
+						<ul><li>Interner Status einer Komponente</li></ul>
+					</section>
+					<!--<section>
+						<h4>Dekoratoren - @Watch</h4>
+						<pre><code class="hljs javascript">@Watch() </code></pre>
+						<ul><li>declares a hook that runs when a property or state changest</li></ul>
+					</section>-->
+					<section>
+						<h4>Dekoratoren - @Method</h4>
+						<pre><code class="hljs javascript" data-line-numbers="4,5,8,9">import { Method } from '@stencil/core';
+
+export class StPopUp {
+	@Method()
+	async open() {
+		// show the popup
+	}
+	@Method()
+	async close() {
+		// close the popup
+	}
+}</code></pre>
+						<ul><li>Methode die man über Referenz zur Komponente aufrufen kann</li></ul>
+					</section>
+					<section>
+						<h4>Dekoratoren - @Event</h4>
+						<!--data-line-numbers="4,8-11"-->
+						<pre><code class="hljs javascript" data-line-numbers="6,9">import { Event, EventEmitter } from '@stencil/core';
+
+...
+export class TodoList {
+
+	@Event() todoCompleted: EventEmitter;
+
+	todoCompletedHandler(todo: Todo) {
+		this.todoCompleted.emit(todo);
+	}
+}</code></pre>
+						<ul><li>DOM Event welches die Komponente feuert</li></ul>
+					</section>
+				</section>
+				<section>
+					<img src="assets/live-coding.png"/>
+					<h3>Live Coding</h3>
+				</section>
 				<section>
 					<h3>Zusammenfassung</h3>
 					<ul>
 						<li>Compiler zur Generierung von gekapselten Web Komponenten</li>
 						<li>Komponenten mit Präfix benennen</li>
+						<li>Komponenten verwendbar in unterschiedlichen Frontend Frameworks</li>
+						<li>Hilfreich zur Erstellung einer unternehmensinternen Komponenten-Bibliothek</li>
 					</ul>
+				</section>
+				<section>
+					<h3>Ende</h3>
+					<p>Vielen Dank für die Aufmerksamkeit</p>
 				</section>
 			</div>
 		</div>
