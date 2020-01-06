@@ -10,20 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
   interface StButton {
     'label': string;
   }
@@ -35,12 +21,6 @@ export namespace Components {
 
 declare global {
 
-
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
 
   interface HTMLStButtonElement extends Components.StButton, HTMLStencilElement {}
   var HTMLStButtonElement: {
@@ -60,7 +40,6 @@ declare global {
     new (): HTMLStTileElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
     'st-button': HTMLStButtonElement;
     'st-nav-bar': HTMLStNavBarElement;
     'st-tile': HTMLStTileElement;
@@ -68,20 +47,6 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
   interface StButton {
     'label'?: string;
   }
@@ -91,7 +56,6 @@ declare namespace LocalJSX {
   interface StTile {}
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
     'st-button': StButton;
     'st-nav-bar': StNavBar;
     'st-tile': StTile;
@@ -104,7 +68,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'st-button': LocalJSX.StButton & JSXBase.HTMLAttributes<HTMLStButtonElement>;
       'st-nav-bar': LocalJSX.StNavBar & JSXBase.HTMLAttributes<HTMLStNavBarElement>;
       'st-tile': LocalJSX.StTile & JSXBase.HTMLAttributes<HTMLStTileElement>;
