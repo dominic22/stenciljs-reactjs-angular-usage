@@ -35,7 +35,6 @@
 					<ol>
 						<li>Was sind Web-Komponenten ?</li>
 						<li>Was ist Stencil ?</li>
-						<li>Warum Stencil ?</li>
 						<li>Stencil API</li>
 						<li>Live Coding</li>
 						<li>Zusammenfassung</li>
@@ -59,22 +58,24 @@
 					</section>
 				</section>
 				<section>
-					<h3>Was ist Stencil ?</h3>
-					<ul>
-						<li>Compiler für Web-Komponenten</li>
-						<li>Basiert auf TypeScript und verwendet JSX</li>
-						<li>Open Source</li>
-						<li>Entwickelt von Ionic</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Warum Stencil ?</h3>
-				
-					<img src="assets/browser-support.JPG"/>
-					<ul>
-						<li>Unterstützt alle gängigen Browser</li>
-						<li>Einfache API zur Erstellung von Web-Komponenten</li>
-					</ul>
+					<section>
+						<h3>Was ist Stencil ?</h3>
+						<ul>
+							<li>Compiler für Web-Komponenten</li>
+							<li>Basiert auf TypeScript und verwendet JSX</li>
+							<li>Open Source</li>
+							<li>Entwickelt von Ionic</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Warum Stencil ?</h3>
+					
+						<img src="assets/browser-support.JPG"/>
+						<ul>
+							<li>Unterstützt alle gängigen Browser</li>
+							<li>Einfache API zur Erstellung von Web-Komponenten</li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -160,6 +161,36 @@ export class TodoList {
 	}
 }</code></pre>
 						<ul><li>DOM Event welches die Komponente feuert</li></ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Framework Integration</h3>
+					</section>
+					<section>
+						<h4>Framework Integration - React</h4>
+						<pre><code class="hljs javascript" data-line-numbers="6,11-13">import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import { applyPolyfills, defineCustomElements } from 'stencil-library-itd/loader';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
+applyPolyfills().then(() => {
+	defineCustomElements(window);
+});</code></pre>
+					</section>
+					<section>
+						<h4>Framework Integration - TypeScript</h4>
+						<pre><code class="hljs javascript" data-line-numbers="1-5">declare namespace JSX {
+	interface IntrinsicElements {
+		[tagName:string]: any
+	}
+}</code></pre>
+					<p>Custom Type Definition Datei notwendig</p>
 					</section>
 				</section>
 				<section>

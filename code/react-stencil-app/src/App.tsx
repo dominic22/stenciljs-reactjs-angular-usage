@@ -8,6 +8,7 @@ const App: React.FC = () => {
     <st-nav-bar/>
     <div className="App">
       <header className="App-header">
+        <h1>React Stencil Demo</h1>
         <st-tile>
           <h1>Content</h1>
           <st-button label="Test"/>
