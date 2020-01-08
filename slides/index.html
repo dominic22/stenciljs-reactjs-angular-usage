@@ -174,11 +174,9 @@ export class TodoList {
 					</section>
 					<section>
 						<h4>Framework Integration - React</h4>
-						<pre><code class="hljs javascript" data-line-numbers="6,11-13">import React from 'react';
+						<pre><code class="hljs javascript" data-line-numbers="4,9-11">import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import { applyPolyfills, defineCustomElements } from 'stencil-library-itd/loader';
 
 ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
@@ -187,17 +185,61 @@ registerServiceWorker();
 applyPolyfills().then(() => {
 	defineCustomElements(window);
 });</code></pre>
+					<ul>
+						<li>defineCustomElements ist "Main" Funktion</li>
+						<li>Lädt Web Komponenten Bibliothek</li>
+						<li>Einmalig während Bootstrapping aufrufen</li>
+					</ul>
 					</section>
 					<section>
-						<h4>Framework Integration - TypeScript</h4>
+						<h4>Framework Integration - React + TypeScript</h4>
 						<pre><code class="hljs javascript" data-line-numbers="1-5">declare namespace JSX {
 	interface IntrinsicElements {
 		[tagName:string]: any
 	}
 }</code></pre>
 					<ul>
-						<li>Verwendung benutzerdefinierter HTML Elemente</li>
-						<li>Custom Type Definition Datei notwendig</li>
+						<li>Verwendung benutzerdefinierter JSX Elemente</li>
+						<li>Custom Type Definition Datei verwenden</li>
+					</ul>
+					</section>
+					
+					<section>
+						<h4>Framework Integration - Angular</h4>
+						<pre><code class="hljs javascript" data-line-numbers="2,11">import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+	declarations: [AppComponent],
+	imports: [BrowserModule, FormsModule],
+	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}</code></pre>
+					<ul>
+						<li>CUSTOM_ELEMENTS_SCHEMA in jedem Modul angeben, das Web Komponenten verwendet</li>
+					</ul>
+					</section>
+					<section>
+						<h4>Framework Integration - Angular</h4>
+						<pre><code class="hljs javascript" data-line-numbers="5,13">import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+import { defineCustomElements } from 'stencil-library-itd/loader';
+
+if (environment.production) {
+	enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+	.catch(err => console.log(err));
+defineCustomElements(window);</code></pre>
+					<ul>
+						<li>defineCustomElements einmalig während bootstrapping aufrufen</li>
 					</ul>
 					</section>
 				</section>
