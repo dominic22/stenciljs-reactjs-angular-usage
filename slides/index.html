@@ -44,8 +44,10 @@
 					<section>
 						<h3>Was sind Web-Komponenten ?</h3>
 						<ul>
+							<li>Standard für universelle Komponenten</li>
 							<li>Erstellung von benutzerdefinierten HTML Elemente</li>
-							<li>Verwendung von Shadow DOM</li>
+							<li>Verwendbar in allen JavaScript Frameworks und Plain JavaScript</li>
+							<li>Ermöglichung von Shadow DOM</li>
 						</ul>
 					</section>
 					<section>
@@ -62,6 +64,8 @@
 						<h3>Was ist Stencil ?</h3>
 						<ul>
 							<li>Compiler für Web-Komponenten</li>
+							<li>Kein neues Frontend Framework</li>
+							<li>Stencil Komponenten bauen auf Web Komponenten auf</li>
 							<li>Basiert auf TypeScript und verwendet JSX</li>
 							<li>Open Source</li>
 							<li>Entwickelt von Ionic</li>
@@ -72,6 +76,7 @@
 					
 						<img src="assets/browser-support.JPG"/>
 						<ul>
+							<li>Code wird von Compiler optimiert</li>
 							<li>Unterstützt alle gängigen Browser</li>
 							<li>Einfache API zur Erstellung von Web-Komponenten</li>
 						</ul>
@@ -176,7 +181,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { applyPolyfills, defineCustomElements } from 'stencil-library-itd/loader';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
 registerServiceWorker();
 
 applyPolyfills().then(() => {
@@ -190,7 +195,10 @@ applyPolyfills().then(() => {
 		[tagName:string]: any
 	}
 }</code></pre>
-					<p>Custom Type Definition Datei notwendig</p>
+					<ul>
+						<li>Verwendung benutzerdefinierter HTML Elemente</li>
+						<li>Custom Type Definition Datei notwendig</li>
+					</ul>
 					</section>
 				</section>
 				<section>
