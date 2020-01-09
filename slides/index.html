@@ -27,75 +27,79 @@
 			<div class="slides">
 				<section data-background="image.png">
 					<img src="assets/stenciljs-og.png"/>
-					<h3>Web-Komponenten mit Stencil</h1>
+					<h3>Web-Komponenten mit Stencil</h3>
 					<p>Dominic Zettl</p>
 				</section>
 				<section>
-					<h3>Agenda</h3>
-					<ol>
-						<li>Was sind Web-Komponenten ?</li>
-						<li>Was ist Stencil ?</li>
-						<li>Stencil API</li>
-						<li>Framework Integration</li>
-						<li>Live Coding</li>
-						<li>Limitierungen</li>
-						<li>Zusammenfassung</li>
-					</ol>
+				<!--TODO Timeline AngularJs Angular2+ React Vue, ...-->
 				</section>
+<!--				<section>-->
+<!--					<h3>Agenda</h3>-->
+<!--					<ol>-->
+<!--						<li>Was sind Web-Komponenten ?</li>-->
+<!--						<li>Was ist Stencil ?</li>-->
+<!--						<li>Stencil API</li>-->
+<!--						<li>Framework Integration</li>-->
+<!--						<li>Live Coding</li>-->
+<!--						<li>Limitierungen</li>-->
+<!--						<li>Zusammenfassung</li>-->
+<!--					</ol>-->
+<!--				</section>-->
 				<section>
+					<section><h3>Was sind Web-Komponenten ?</h3></section>
 					<section>
-						<h3>Was sind Web-Komponenten ?</h3>
 						<ul>
 							<li>Standard für universelle Komponenten</li>
-							<li>Erstellung von benutzerdefinierten HTML Elemente</li>
-							<li>Verwendbar in allen JavaScript Frameworks und Plain JavaScript</li>
+							<li>Erstellung benutzerdefinierter HTML Elemente</li>
+							<li>Vanilla JS API => verwendbar in allen JS Frameworks</li>
 							<li>Ermöglichung von Shadow DOM</li>
 						</ul>
 					</section>
+					<section><h3>Shadow DOM</h3></section>
 					<section>
-						<h3>Shadow DOM</h3>
 						<ul>
-							<li>Funktionalität ist gekapselt und von weiterem Code vollständig getrennt</li>
-							<li>Styles innerhalb haben keine Auswirkung auf Komponenten außerhalb</li>
-							<li>Styles außerhalb haben keine Auswirkung auf Komponenten innerhalb</li>
+							<li>Funktionalität von weiterem Code getrennt</li>
+							<li>Styles innerhalb keine Auswirkung auf außerhalb</li>
+							<li>Styles außerhalb keine Auswirkung auf innerhalb</li>
 						</ul>
 					</section>
 				</section>
 				<section>
+					<section><h3>Was ist Stencil ?</h3></section>
 					<section>
-						<h3>Was ist Stencil ?</h3>
 						<ul>
-							<li>Compiler für Web-Komponenten</li>
-							<li>Kein neues Frontend Framework</li>
-							<li>Stencil Komponenten bauen auf Web Komponenten auf</li>
-							<li>Basiert auf TypeScript und verwendet JSX</li>
-							<li>Open Source</li>
-							<li>Entwickelt von Ionic</li>
+							<li><b>Kein neues Frontend Framework</b></li>
+							<li>Compiler für Web Komponenten</li>
+							<li>100% kompatibel zum Standard</li>
+							<li>Open Source - Ionic</li>
+						</ul>
+					</section>
+					<section><h3>Warum Stencil ?</h3></section>
+					<section>
+						<img src="assets/browser-support.JPG" width="720"/>
+						<ul>
+							<li>Web Komponenten API eher Low Level</li>
+							<li>Code wird von Compiler optimiert</li>
 						</ul>
 					</section>
 					<section>
-						<h3>Warum Stencil ?</h3>
-					
-						<img src="assets/browser-support.JPG"/>
 						<ul>
-							<li>Code wird von Compiler optimiert</li>
-							<li>Unterstützt alle gängigen Browser</li>
-							<li>Einfache API zur Erstellung von Web-Komponenten</li>
-							<li>Virtual DOM, JSX, und asynchrones rendern</li>
-							<li>100% kompatibel zum Web Komponenten Standard</li>
+							<li>Reactive Data Binding</li>
+							<li>Virtual DOM</li>
+							<li>JSX</li>
+							<li>Asynchrones rendern</li>
+							<li>Einfache API</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h3>Stencil API</h3>
-						<ul>
-							<li>Lifecycle Hooks: Lebenszyklus Events einer Komponente</li>
-							<li>Dekoratoren: Eigenschaften einer Komponente</li>
-						</ul>
 					</section>
+					<section><p>Lifecycle Hooks: <b>Lebenszyklus Events</b></p></section>
+					<section><p>@Dekoratoren: <b>Eigenschaften und Methoden</b></p></section>
 					<section>
-						<h4>Dekoratoren - @Component</h4>
+						<h4>@Component</h4>
 						<pre>
 <code class="hljs javascript" data-line-numbers="1-4">@Component({
 	tag: 'st-button',
@@ -106,7 +110,7 @@ export class StButton {
 						<ul><li>Deklariert die Web-Komponente <b>&lt;st-button&gt;</b></li></ul>
 					</section>
 					<section>
-						<h4>Dekoratoren - @Prop</h4>
+						<h4>@Prop</h4>
 						<pre><code class="hljs javascript" data-line-numbers="4-6">import { Prop } from '@stencil/core';
 
 export class StButton {
@@ -114,10 +118,10 @@ export class StButton {
 	@Prop() icon: string;
 	@Prop() label: string;
 }</code></pre>
-						<ul><li>Deklariert ein Property oder Attribut</li></ul>
+						<ul><li>Deklariert Property oder Attribut</li></ul>
 					</section>
 					<section>
-						<h4>Dekoratoren - @State</h4>
+						<h4>@State</h4>
 						<pre><code class="hljs javascript" data-line-numbers="2,6,11">export class StToggleButton {
 	@State() open: boolean;
 
@@ -135,12 +139,12 @@ export class StButton {
 						<ul><li>Interner Status einer Komponente</li></ul>
 					</section>
 					<!--<section>
-						<h4>Dekoratoren - @Watch</h4>
+						<h4>@Watch</h4>
 						<pre><code class="hljs javascript">@Watch() </code></pre>
 						<ul><li>declares a hook that runs when a property or state changest</li></ul>
 					</section>-->
 					<section>
-						<h4>Dekoratoren - @Method</h4>
+						<h4>@Method</h4>
 						<pre><code class="hljs javascript" data-line-numbers="4,5,8,9">import { Method } from '@stencil/core';
 
 export class StPopUp {
@@ -153,10 +157,10 @@ export class StPopUp {
 		// close the popup
 	}
 }</code></pre>
-						<ul><li>Methode die man über Referenz zur Komponente aufrufen kann</li></ul>
+						<ul><li>Methode über Referenz aufrufbar</li></ul>
 					</section>
 					<section>
-						<h4>Dekoratoren - @Event</h4>
+						<h4>@Event</h4>
 						<!--data-line-numbers="4,8-11"-->
 						<pre><code class="hljs javascript" data-line-numbers="6,9">import { Event, EventEmitter } from '@stencil/core';
 
@@ -190,7 +194,7 @@ applyPolyfills().then(() => {
 	defineCustomElements(window);
 });</code></pre>
 					<ul>
-						<li>defineCustomElements ist "Main" Funktion</li>
+						<li>defineCustomElements = "Main" Funktion</li>
 						<li>Lädt Web Komponenten Bibliothek</li>
 						<li>Einmalig während Bootstrapping aufrufen</li>
 					</ul>
@@ -248,17 +252,21 @@ defineCustomElements(window);</code></pre>
 					</section>
 				</section>
 				<section>
+					<section><h3>Beispiel</h3></section>
+					<section><h3>Verwendung</h3></section>
+				</section>
+				<section>
 					<img src="assets/live-coding.png"/>
 					<h3>Live Coding</h3>
 				</section>
 				<section>
 					<h3>Limitierungen</h3>
 					<ul>
-						<li>Properties PascalCase (Angular)</li>
+						<li>Properties CamelCase (Angular)</li>
 						<li>Properties kebab-case (React)</li>
-						<li>Event Registrierung über addEventListener</li>
+						<li>Event Registrierung über addEventListener (React)</li>
 						<li>Low Level Komponenten</li>
-						<li>One Way Data Binding</li>
+						<li>One Way Data Binding (Angular)</li>
 					</ul>
 				</section>
 				<section>
