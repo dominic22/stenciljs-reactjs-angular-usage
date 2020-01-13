@@ -7,9 +7,16 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `label`  | `label`   |             | `string` | `undefined` |
+| Property | Attribute | Description | Type       | Default     |
+| -------- | --------- | ----------- | ---------- | ----------- |
+| `labels` | --        |             | `string[]` | `undefined` |
+
+
+## Events
+
+| Event               | Description | Type                  |
+| ------------------- | ----------- | --------------------- |
+| `navBarItemClicked` |             | `CustomEvent<number>` |
 
 
 ----------------------------------------------

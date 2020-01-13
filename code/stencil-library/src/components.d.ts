@@ -14,7 +14,7 @@ export namespace Components {
     'label': string;
   }
   interface StNavBar {
-    'label': string;
+    'labels': Array<string>;
   }
   interface StTile {}
 }
@@ -51,7 +51,8 @@ declare namespace LocalJSX {
     'label'?: string;
   }
   interface StNavBar {
-    'label'?: string;
+    'labels'?: Array<string>;
+    'onNavBarItemClicked'?: (event: CustomEvent<number>) => void;
   }
   interface StTile {}
 

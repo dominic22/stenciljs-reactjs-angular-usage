@@ -1,8 +1,39 @@
 st-tile {
-    background: #ededed;
-    border-radius: 3px;
-    padding: 20px;
+  background: #ededed;
+  border-radius: 3px;
+  padding: 20px;
+  display: block;
+  background: white;
+  border: 2px solid #ededed;
+
+  h1, h2, h3, h4, p, div {
+    color: #2b2b2b;
+  }
+
+  .list-wrapper {
     display: block;
-    background: white;
-    border: 2px solid #ededed;
+    vertical-align: top;
+    margin: 0;
+    text-align: center;
+    cursor: default;
+  }
+
+  ul {
+    list-style: disc;
+    margin: 20px 0 30px 20px;
+    background: transparent;
+    color: #333333;
+    width: 400px;
+  }
+
+  ul li {
+    position: relative;
+    padding: 15px 0 6px 15px;
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    width: 350px;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+  }
 }
