@@ -1,11 +1,11 @@
-import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'st-nav-bar',
-  styleUrl: 'st-nav-bar.less'
-})
+             tag: 'st-nav-bar',
+             styleUrl: 'st-nav-bar.less'
+           })
 export class StNavBar {
-  @Prop() labels: Array<string> ;
+  @Prop() labels: string[];
   @Event() navBarItemClicked: EventEmitter<number>;
 
   render() {
@@ -14,9 +14,9 @@ export class StNavBar {
       <ul>
         {
           this.labels.map((label, index) => {
-            <li onClick={ () => {
+            return (<li onClick={ () => {
               this.navBarItemClicked.emit(index);
-            } }>{ label }</li>
+            } }>{ label }</li>)
           })
         }
       </ul>
