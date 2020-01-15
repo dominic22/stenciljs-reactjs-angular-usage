@@ -36,14 +36,14 @@
         </li>
       </ul>
       <st-button [buttonType]="'primary'"
-       (click)="proButtonClick($event)"
-       label="Auswählen" >
+                 (click)="proButtonClick($event)"
+                 label="Auswählen">
       </st-button>
     </st-tile>
     <st-pop-up #popUp
                headline="Kaufbestätigung"
                message="Möchten Sie den Artikel in der Pro Variante kaufen ?"
-               (popUpAccepted)="onPopUpClose($event)"
-    ></st-pop-up>
+               (popUpAccepted)="onPopUpClose($event)">
+    </st-pop-up>
   </div>
 </div>
