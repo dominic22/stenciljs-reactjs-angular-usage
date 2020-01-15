@@ -16,9 +16,6 @@ export namespace Components {
     'buttonType'?: StButtonType;
     'label': string;
   }
-  interface StNavBar {
-    'labels': string[];
-  }
   interface StPopUp {
     'headline': string;
     'hide': () => Promise<void>;
@@ -37,12 +34,6 @@ declare global {
     new (): HTMLStButtonElement;
   };
 
-  interface HTMLStNavBarElement extends Components.StNavBar, HTMLStencilElement {}
-  var HTMLStNavBarElement: {
-    prototype: HTMLStNavBarElement;
-    new (): HTMLStNavBarElement;
-  };
-
   interface HTMLStPopUpElement extends Components.StPopUp, HTMLStencilElement {}
   var HTMLStPopUpElement: {
     prototype: HTMLStPopUpElement;
@@ -56,7 +47,6 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'st-button': HTMLStButtonElement;
-    'st-nav-bar': HTMLStNavBarElement;
     'st-pop-up': HTMLStPopUpElement;
     'st-tile': HTMLStTileElement;
   }
@@ -67,10 +57,6 @@ declare namespace LocalJSX {
     'buttonType'?: StButtonType;
     'label'?: string;
   }
-  interface StNavBar {
-    'labels'?: string[];
-    'onNavBarItemClicked'?: (event: CustomEvent<number>) => void;
-  }
   interface StPopUp {
     'headline'?: string;
     'message'?: string;
@@ -80,7 +66,6 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'st-button': StButton;
-    'st-nav-bar': StNavBar;
     'st-pop-up': StPopUp;
     'st-tile': StTile;
   }
@@ -93,7 +78,6 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'st-button': LocalJSX.StButton & JSXBase.HTMLAttributes<HTMLStButtonElement>;
-      'st-nav-bar': LocalJSX.StNavBar & JSXBase.HTMLAttributes<HTMLStNavBarElement>;
       'st-pop-up': LocalJSX.StPopUp & JSXBase.HTMLAttributes<HTMLStPopUpElement>;
       'st-tile': LocalJSX.StTile & JSXBase.HTMLAttributes<HTMLStTileElement>;
     }
