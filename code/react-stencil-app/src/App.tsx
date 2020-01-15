@@ -8,7 +8,7 @@ const App: React.FC = () => {
   const setpopUpRef = (ref: HTMLStPopUpElement) => {
     if (ref) {
       popUpRef = ref;
-      popUpRef.addEventListener('popUpAccepted', (e: any) => {
+      popUpRef.addEventListener('popUpClose', (e: any) => {
         if (e.detail === true) {
           console.log('article bought', e);
           setArticleBought(true);

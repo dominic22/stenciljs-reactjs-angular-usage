@@ -74,7 +74,7 @@ declare namespace LocalJSX {
   interface StPopUp {
     'headline'?: string;
     'message'?: string;
-    'onPopUpAccepted'?: (event: CustomEvent<boolean>) => void;
+    'onPopUpClose'?: (event: CustomEvent<boolean>) => void;
   }
   interface StTile {}
 

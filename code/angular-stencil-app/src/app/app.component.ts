@@ -10,7 +10,7 @@ export class AppComponent {
   @ViewChild('popUp', { static: false })
   popUpRef: ElementRef<HTMLStPopUpElement>;
 
-  proButtonClick($event) {
+  primaryButtonClick($event) {
     this.popUpRef.nativeElement.show();
   }
 

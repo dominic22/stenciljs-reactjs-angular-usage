@@ -1,10 +1,10 @@
 <div>
-  <h1>Select a plan:</h1>
+  <h1>Wählen Sie einen Modell:</h1>
   <div class="tiles">
     <st-tile>
       <h3>Basis</h3>
       <p>5 € / Monat</p>
-      <div className="list-wrapper">
+      <div class="list-wrapper">
         <ul>
           <li>
             Unbegrenzte Anzahl Anwendungen
@@ -36,14 +36,14 @@
         </li>
       </ul>
       <st-button [buttonType]="'primary'"
-                 (click)="proButtonClick($event)"
+                 (click)="primaryButtonClick($event)"
                  label="Auswählen">
       </st-button>
     </st-tile>
     <st-pop-up #popUp
                headline="Kaufbestätigung"
                message="Möchten Sie den Artikel in der Pro Variante kaufen ?"
-               (popUpAccepted)="onPopUpClose($event)">
+               (popUpClose)="onPopUpClose($event)">
     </st-pop-up>
   </div>
 </div>

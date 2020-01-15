@@ -9,7 +9,7 @@ export class StPopUp {
   @Prop() headline: string;
   @Prop() message: string;
   @State() isVisible: boolean = false;
-  @Event() popUpAccepted: EventEmitter<boolean>;
+  @Event() popUpClose: EventEmitter<boolean>;
 
   @Method()
   async show() {
@@ -29,11 +29,11 @@ export class StPopUp {
         <div class="footer">
           <st-button label="Schließen" onClick={ () => {
             this.hide()
-            this.popUpAccepted.emit(false);
+            this.popUpClose.emit(false);
           } }/>
           <st-button buttonType="primary" label="Akzeptieren" onClick={ () => {
             this.hide()
-            this.popUpAccepted.emit(true);
+            this.popUpClose.emit(true);
           } }/>
         </div>
       </div>
