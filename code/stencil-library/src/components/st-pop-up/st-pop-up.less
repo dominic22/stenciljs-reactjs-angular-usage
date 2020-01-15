@@ -6,12 +6,15 @@ st-pop-up {
       display: flex;
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: 100vh;
       width: 100vw;
     }
     .pop-up-content {
-      width: 500px;
-      height: 200px;
+      max-width: 800px;
+      min-height: 200px;
       margin: auto;
       background: white;
       padding: 20px 20px 10px;
@@ -30,6 +33,9 @@ st-pop-up {
       }
       .footer {
         align-self: flex-end;
+        > st-button {
+          margin-left: 10px;
+        }
       }
     }
   }

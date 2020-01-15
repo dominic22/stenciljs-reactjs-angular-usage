@@ -3,15 +3,22 @@ import './App.css';
 
 const App: React.FC = () => {
   let navBarRef;
-  const setRef = (ref: HTMLStNavBarElement) => {
-    if(ref) {
+  const setNavBarRef = (ref: HTMLStNavBarElement) => {
+    if (ref) {
       navBarRef = ref;
       navBarRef.labels = ['Home', 'Contact', 'Info'];
     }
   };
+  let popUpRef : HTMLStPopUpElement | undefined;
+  const setpopUpRef = (ref: HTMLStPopUpElement) => {
+    if (ref) {
+      popUpRef = ref;
+      popUpRef.addEventListener('popUpAccepted', e => console.log('AAA ', e));
+    }
+  };
   return (
     <div>
-      <st-nav-bar ref={ setRef }/>
+      <st-nav-bar ref={ setNavBarRef }/>
       <div className="App">
         <header className="App-header">
           <h1>Select a plan:</h1>
@@ -57,8 +64,14 @@ const App: React.FC = () => {
                   Export to PDF
                 </li>
               </ul>
-              <st-button class="primary" label="Select Pro Bundle"/>
+              <st-button class="primary" label="Select Pro Bundle" onClick={ () => {
+                if (popUpRef != null) {
+                  popUpRef.show();
+                }
+              } }/>
             </st-tile>
+            <st-pop-up ref={ setpopUpRef } headline="Kaufbestätigung"
+                       message="Möchten Sie den Artikel in der Pro Variante wirklich kaufen ?"></st-pop-up>
           </div>
         </header>
       </div>

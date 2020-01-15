@@ -12,27 +12,27 @@ export class StPopUp {
   @Event() popUpAccepted: EventEmitter<boolean>;
 
   @Method()
-  async showPopUp() {
+  async show() {
     this.isVisible = true;
   }
 
   @Method()
-  async hidePopUp() {
+  async hide() {
     this.isVisible = false;
   }
 
   render() {
     return <div class={ `pop-up-container ${ this.isVisible ? 'visible' : '' }` }>
       <div class='pop-up-content'>
-        <div class="header"><h1>{ this.headline }</h1></div>
-        <div class="body"><h3>{ this.message }</h3></div>
+        <div class="header"><h3>{ this.headline }</h3></div>
+        <div class="body"><p>{ this.message }</p></div>
         <div class="footer">
           <st-button label="Schließen" onClick={ () => {
-            this.hidePopUp()
+            this.hide()
             this.popUpAccepted.emit(false);
           } }></st-button>
-          <st-button label="Akzeptieren" onClick={ () => {
-            this.hidePopUp()
+          <st-button class="primary" label="Akzeptieren" onClick={ () => {
+            this.hide()
             this.popUpAccepted.emit(true);
           } }></st-button>
         </div>

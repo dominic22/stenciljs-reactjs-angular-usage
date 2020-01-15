@@ -18,9 +18,9 @@ export namespace Components {
   }
   interface StPopUp {
     'headline': string;
-    'hidePopUp': () => Promise<void>;
+    'hide': () => Promise<void>;
     'message': string;
-    'showPopUp': () => Promise<void>;
+    'show': () => Promise<void>;
   }
   interface StTile {}
 }
