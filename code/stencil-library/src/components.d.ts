@@ -7,10 +7,13 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  StButtonType,
+} from './components/st-button/st-button';
 
 export namespace Components {
   interface StButton {
+    'buttonType'?: StButtonType;
     'label': string;
   }
   interface StNavBar {
@@ -61,6 +64,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface StButton {
+    'buttonType'?: StButtonType;
     'label'?: string;
   }
   interface StNavBar {

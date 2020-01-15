@@ -1,34 +1,31 @@
 
+button {
+  &.primary {
+    color: white;
+    background-color: #008CBA;
+  }
 
-st-button {
-    &.primary {
-        button {
-            color: white;
-            background-color: #008CBA;
-        }
-    }
-    &.red {
-        button {
-            color: white;
-            background-color: #f44336;
-        }
-    }
-    button {
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        background-color: rgba(70, 70, 70, 0.5);;
-        cursor: pointer;
-        color: black;
-        &:hover {
-            background-color: rgba(70, 70, 70, 0.7);
-        }
-        &:active {
-            background-color: rgba(70, 70, 70, 0.8);
-        }
-    }
+  &.error {
+    color: white;
+    background-color: #f44336;
+  }
+
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: rgba(70, 70, 70, 0.5);;
+  cursor: pointer;
+  color: black;
+
+  &:hover {
+    background-color: rgba(70, 70, 70, 0.7);
+  }
+
+  &:active {
+    background-color: rgba(70, 70, 70, 0.8);
+  }
 }

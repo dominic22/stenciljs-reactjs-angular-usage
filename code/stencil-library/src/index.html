@@ -14,8 +14,8 @@
   <st-nav-bar></st-nav-bar>
   <div style="margin: 20px">
     <st-button label="Standard Button"></st-button>
-    <st-button class="red" label="Roter Button"></st-button>
-    <st-button class="primary" label="Primary Button"></st-button>
+    <st-button button-type="error" label="Roter Button"></st-button>
+    <st-button button-type="primary" label="Primary Button"></st-button>
   </div>
   <st-tile style="margin: 20px; width: 1000px; height: 500px;">
       <h1>Tile</h1>
@@ -24,14 +24,13 @@
   </st-tile>
 
   <script type="text/javascript">
-
     function showPopUp() {
       const popUp = document.querySelector('st-pop-up');
       popUp.show();
     };
   </script>
 
-  <st-button class="primary" onclick="showPopUp()" label="Show PopUp"></st-button>
+  <st-button button-type="primary" onclick="showPopUp()" label="Show PopUp"></st-button>
   <st-pop-up headline="Pop Up Dialog" message="This is our first popup."></st-pop-up>
 </body>
 </html>

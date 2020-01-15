@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `label`  | `label`   |             | `string` | `undefined` |
+| Property     | Attribute     | Description | Type                   | Default     |
+| ------------ | ------------- | ----------- | ---------------------- | ----------- |
+| `buttonType` | `button-type` |             | `"error" \| "primary"` | `undefined` |
+| `label`      | `label`       |             | `string`               | `undefined` |
 
 
 ## Dependencies

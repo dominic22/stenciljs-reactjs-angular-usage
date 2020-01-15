@@ -31,7 +31,7 @@ export class StPopUp {
             this.hide()
             this.popUpAccepted.emit(false);
           } }></st-button>
-          <st-button class="primary" label="Akzeptieren" onClick={ () => {
+          <st-button buttonType="primary" label="Akzeptieren" onClick={ () => {
             this.hide()
             this.popUpAccepted.emit(true);
           } }></st-button>
