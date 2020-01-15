@@ -22,5 +22,16 @@
       <p>Content of the tile</p>
     </div>
   </st-tile>
+
+  <script type="text/javascript">
+
+    function showPopUp() {
+      const popUp = document.querySelector('st-pop-up');
+      popUp.showPopUp();
+    };
+  </script>
+
+  <st-button class="primary" onclick="showPopUp()" label="Show PopUp"></st-button>
+  <st-pop-up headline="Pop Up Dialog" message="This is our first popup."></st-pop-up>
 </body>
 </html>
