@@ -32,7 +32,7 @@ const App: React.FC = () => {
               <li>
                 Unbegrenzte Anzahl Anwendungen
               </li>
-              <li>1GB Cloud Speicherplatz</li>
+              <li>1GB Speicherplatz</li>
               <li>
                 1 Entwickler
               </li>
@@ -41,7 +41,6 @@ const App: React.FC = () => {
               </li>
             </ul>
           </div>
-
           <st-button label="Auswählen"/>
         </st-tile>
         <st-tile>
@@ -51,7 +50,7 @@ const App: React.FC = () => {
             <li>
               Unbegrenzte Anzahl Anwendungen
             </li>
-            <li>10GB Cloud Speicherplatz</li>
+            <li>10GB Speicherplatz</li>
             <li>
               5 Entwickler
             </li>
@@ -69,7 +68,7 @@ const App: React.FC = () => {
         </st-tile>
         <st-pop-up ref={ setpopUpRef }
                    headline="Kaufbestätigung"
-                   message="Möchten Sie den Artikel in der Pro Variante wirklich kaufen ?"/>
+                   message="Möchten Sie den Artikel in der Pro Variante kaufen ?"/>
       </div>
     </>)
   };

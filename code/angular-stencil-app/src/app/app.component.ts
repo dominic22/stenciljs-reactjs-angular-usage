@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
-})
+             selector: 'app-root',
+             templateUrl: './app.component.html',
+             styleUrls: ['./app.component.less']
+           })
 export class AppComponent {
-  title = 'angular-stencil-app';
+  @ViewChild('popUp', { static: false })
+  popUpRef: ElementRef<HTMLStPopUpElement>;
+
+  proButtonClick($event) {
+    this.popUpRef.nativeElement.show();
+  }
+  onPopUpClose($event) {
+    console.log('POP UP CLOSES', $event.detail);
+  }
 }

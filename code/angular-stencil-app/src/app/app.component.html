@@ -1,45 +1,49 @@
 <div>
   <h1>Select a plan:</h1>
   <div class="tiles">
-    <st-tile >
-      <h3>Lite</h3>
-      <p>5 $ / month</p>
-      <ul>
-        <li>
-          No ads on your decks
-        </li>
-        <li>1GB storage</li>
-        <li>
-          1 collaborator per deck
-        </li>
-        <li>
-          Present offline
-        </li>
-        <li>
-          Export to PDF
-        </li>
-      </ul>
-      <st-button label="Select Lite Plan"></st-button>
+    <st-tile>
+      <h3>Basis</h3>
+      <p>5 € / Monat</p>
+      <div className="list-wrapper">
+        <ul>
+          <li>
+            Unbegrenzte Anzahl Anwendungen
+          </li>
+          <li>1GB Speicherplatz</li>
+          <li>
+            1 Entwickler
+          </li>
+          <li>
+            1 Jahr Updates
+          </li>
+        </ul>
+      </div>
+      <st-button label="Auswählen"></st-button>
     </st-tile>
     <st-tile>
       <h3>Pro</h3>
-      <p>10 $ / month</p>
+      <p>15 € / Monat</p>
       <ul>
         <li>
-          No ads on your decks
+          Unbegrenzte Anzahl Anwendungen
         </li>
-        <li>1GB storage</li>
+        <li>10GB Speicherplatz</li>
         <li>
-          1 collaborator per deck
-        </li>
-        <li>
-          Present offline
+          5 Entwickler
         </li>
         <li>
-          Export to PDF
+          3 Jahre Updates
         </li>
       </ul>
-      <st-button class="primary" label="Select Pro Plan"></st-button>
+      <st-button [buttonType]="'primary'"
+       (click)="proButtonClick($event)"
+       label="Auswählen" >
+      </st-button>
     </st-tile>
+    <st-pop-up #popUp
+               headline="Kaufbestätigung"
+               message="Möchten Sie den Artikel in der Pro Variante kaufen ?"
+               (popUpAccepted)="onPopUpClose($event)"
+    ></st-pop-up>
   </div>
 </div>
