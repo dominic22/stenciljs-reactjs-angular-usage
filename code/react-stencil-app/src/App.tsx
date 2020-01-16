@@ -12,10 +12,10 @@ const App: React.FC = () => {
       popUpRef = ref;
       popUpRef.addEventListener('popUpClose', (e: CustomEvent<boolean> | any) => {
         if (e.detail === true) {
-          console.log('article bought', e);
+          console.log('article bought');
           setArticleBought(true);
         } else {
-          console.log('dialog cancelled', e);
+          console.log('dialog cancelled');
           setArticleBought(false);
         }
       });
