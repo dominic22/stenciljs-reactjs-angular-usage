@@ -3,6 +3,8 @@ import './App.css';
 
 const App: React.FC = () => {
   const [articleBought, setArticleBought] = useState(false);
+
+
   let popUpRef: HTMLStPopUpElement | undefined;
 
   const setPopUpRef = (ref: HTMLStPopUpElement) => {
