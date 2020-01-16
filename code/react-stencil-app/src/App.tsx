@@ -5,10 +5,10 @@ const App: React.FC = () => {
   const [articleBought, setArticleBought] = useState(false);
   let popUpRef: HTMLStPopUpElement | undefined;
 
-  const setpopUpRef = (ref: HTMLStPopUpElement) => {
+  const setPopUpRef = (ref: HTMLStPopUpElement) => {
     if (ref) {
       popUpRef = ref;
-      popUpRef.addEventListener('popUpClose', (e: any) => {
+      popUpRef.addEventListener('popUpClose', (e: CustomEvent<boolean> | any) => {
         if (e.detail === true) {
           console.log('article bought', e);
           setArticleBought(true);
@@ -58,17 +58,19 @@ const App: React.FC = () => {
               3 Jahre Updates
             </li>
           </ul>
-          <st-button button-type={ 'primary' }
-                     label="Auswählen"
-                     onClick={ () => {
-                       if (popUpRef != null) {
-                         popUpRef.show();
-                       }
-                     } }/>
+          <st-button
+            button-type={ 'primary' }
+            label="Auswählen"
+            onClick={ () => {
+              if (popUpRef != null) {
+                popUpRef.show();
+              }
+            } }/>
         </st-tile>
-        <st-pop-up ref={ setpopUpRef }
-                   headline="Kaufbestätigung"
-                   message="Möchten Sie den Artikel in der Pro Variante kaufen ?"/>
+        <st-pop-up
+          ref={ setPopUpRef }
+          headline="Kaufbestätigung"
+          message="Möchten Sie den Artikel in der Pro Variante kaufen ?"/>
       </div>
     </>)
   };

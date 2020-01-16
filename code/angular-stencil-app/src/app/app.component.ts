@@ -15,6 +15,10 @@ export class AppComponent {
   }
 
   onPopUpClose($event) {
-    console.log('POP UP CLOSES', $event.detail);
+    if ($event.detail) {
+      console.log('article bought', $event);
+    } else {
+      console.log('dialog cancelled', $event);
+    }
   }
 }
