@@ -11,25 +11,39 @@
 </head>
 <body style="margin: 0;">
 
-  <div style="margin: 20px">
-    <st-button label="Standard Button"></st-button>
-    <st-button button-type="error" label="Roter Button"></st-button>
-    <st-button button-type="primary" label="Primary Button"></st-button>
+<!-- Button Demo-->
+
+<div style="margin: 20px">
+  <st-button label="Standard Button"></st-button>
+  <st-button button-type="error" label="Roter Button"></st-button>
+  <st-button button-type="primary" label="Primary Button"></st-button>
+</div>
+
+<!--#########################################################################-->
+
+<!-- Tile Demo-->
+
+<st-tile style="margin: 20px; width: 1000px; height: 500px;">
+  <h1>Tile</h1>
+  <p>Content of the tile</p>
   </div>
-  <st-tile style="margin: 20px; width: 1000px; height: 500px;">
-      <h1>Tile</h1>
-      <p>Content of the tile</p>
-    </div>
-  </st-tile>
+</st-tile>
 
-  <script type="text/javascript">
-    function showPopUp() {
-      const popUp = document.querySelector('st-pop-up');
-      popUp.show();
-    };
-  </script>
+<!--#########################################################################-->
 
-  <st-button button-type="primary" onclick="showPopUp()" label="Show PopUp"></st-button>
-  <st-pop-up headline="Pop Up Dialog" message="This is our first popup."></st-pop-up>
+<!-- Pop Up Demo-->
+
+<script type="text/javascript">
+  function showPopUp() {
+    var popUp = document.querySelector('st-pop-up');
+    popUp.show();
+  };
+</script>
+
+<st-button button-type="primary" onclick="showPopUp()" label="PopUp Anzeigen"></st-button>
+<st-pop-up headline="Pop Up Dialog" message="Das ist unser Beispiel PopUp."></st-pop-up>
+
+<!--#########################################################################-->
+
 </body>
 </html>
