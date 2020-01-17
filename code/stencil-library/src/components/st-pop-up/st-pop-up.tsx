@@ -28,11 +28,11 @@ export class StPopUp {
         <div class="body"><p>{ this.message }</p></div>
         <div class="footer">
           <st-button label="Schließen" onClick={ () => {
-            this.hide()
+            this.hide();
             this.popUpClose.emit(false);
           } }/>
           <st-button buttonType="primary" label="Akzeptieren" onClick={ () => {
-            this.hide()
+            this.hide();
             this.popUpClose.emit(true);
           } }/>
         </div>

@@ -46,7 +46,7 @@
 					<img src="assets/vuejs.jpeg"/>
 				</section>
 				<section>
-					<h3>EMBER, PREACT, POLYMER, BACKBONE, KNOCKOUT, INFERNO, INTEREX, AURELIA, DOJO, MARKO, MITHRIL, SPINE, NUCLEAR, SVELTE; RIOT, HYPERHTML, HYPERAPP, TODOMVC, ...</h3>
+					<h3>EMBER, PREACT, POLYMER, BACKBONE, KNOCKOUT, INFERNO, "INTEREX", AURELIA, DOJO, MARKO, MITHRIL, SPINE, NUCLEAR, SVELTE; RIOT, HYPERHTML, HYPERAPP, TODOMVC, ...</h3>
 				</section>
 				<section>
 					<section><h3>Problem:</h3></section>
@@ -82,7 +82,11 @@
 					</section>
 				</section>
 				<section>
-					<section>Wie sieht eine Web Komponente aus?</section>
+					<section><h3>Wie sieht eine Web Komponente aus?</h3></section>
+					<section>Beispiel: Editierbare Liste</section>
+					<section>
+						<img src="assets/editable-list.jpg" alt="">
+					</section>
 					<section>
 						<pre style="width: 100%">
 <code style="max-height: 1000px;zoom: 60%;" class="hljs javascript">'use strict';
@@ -249,11 +253,10 @@
 							<li><b>Kein neues Frontend Framework</b></li>
 						</ul>
 					</section>
-					<section><h3>Warum Stencil ?</h3></section>
 					<section>
 						<img src="assets/browser-support.JPG" width="720"/>
 						<ul>
-							<li>Web Komponenten API umständlich</li>
+							<li>Stencil liefert Polyfills</li>
 							<li>Code wird von Compiler optimiert</li>
 						</ul>
 					</section>
@@ -276,9 +279,10 @@
 					<section>
 						<h4>@Component</h4>
 						<pre>
-<code class="hljs javascript" data-line-numbers="1-4">@Component({
+<code class="hljs javascript" data-line-numbers="1-5">@Component({
 	tag: 'st-button',
-	styleUrl: 'st-button.less'
+	styleUrl: 'st-button.less',
+	shadow: true
 })
 export class StButton {
 }</code></pre>
@@ -446,15 +450,15 @@ defineCustomElements(window);</code></pre>
 						<li>Low Level Komponenten</li>
 					</ul>
 				</section>
-				<section>
-					<h3>Zusammenfassung</h3>
-					<ul>
-						<li>Compiler zur Generierung gekapselter Web Komponenten</li>
-						<li>Präfix verwenden</li>
-						<li>Verwendbar in allen Frontend Frameworks</li>
-						<li>Hilfreich zur Erstellung unternehmensinterner Komponenten-Bibliothek</li>
-					</ul>
-				</section>
+<!--				<section>-->
+<!--					<h3>Zusammenfassung</h3>-->
+<!--					<ul>-->
+<!--						<li>Compiler zur Generierung gekapselter Web Komponenten</li>-->
+<!--						<li>Präfix verwenden</li>-->
+<!--						<li>Verwendbar in allen Frontend Frameworks</li>-->
+<!--						<li>Hilfreich zur Erstellung unternehmensinterner Komponenten-Bibliothek</li>-->
+<!--					</ul>-->
+<!--				</section>-->
 				<section>
 					<img src="https://media.giphy.com/media/DAtJCG1t3im1G/giphy.gif" alt="The End">
 					<p>Vielen Dank für die Aufmerksamkeit</p>

@@ -35,15 +35,17 @@
           3 Jahre Updates
         </li>
       </ul>
-      <st-button [buttonType]="'primary'"
-                 (click)="primaryButtonClick($event)"
-                 label="Auswählen">
+      <st-button
+        [buttonType]="'primary'"
+        (click)="primaryButtonClick($event)"
+        label="Auswählen">
       </st-button>
     </st-tile>
-    <st-pop-up #popUp
-               headline="Kaufbestätigung"
-               message="Möchten Sie den Artikel in der Pro Variante kaufen ?"
-               (popUpClose)="onPopUpClose($event)">
+    <st-pop-up
+      #popUp
+      (popUpClose)="onPopUpClose($event)"
+      headline="Kaufbestätigung"
+      message="Möchten Sie die Lizenz in der Pro Variante kaufen ?">
     </st-pop-up>
   </div>
 </div>
